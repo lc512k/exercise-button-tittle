@@ -1,0 +1,82 @@
+<!DOCTYPE html lang="en">
+<html>
+<head>
+	<title>Buttons</title>
+	<style type="text/css">
+		.visually-hidden {
+			position: absolute;
+			margin: -1px;
+			border: 0;
+			overflow: hidden;
+			padding: 0;
+			width: 0;
+			height: 0;
+			white-space: nowrap;
+		}
+		.works {
+			background-color: lime;
+		}
+		.works::before {
+			content: "+";
+		}
+
+		.kind-of {
+			background-color: orange;
+		}
+		.kind-of::before {
+			content: "~";
+		}
+	</style>
+</head>
+<body>
+<h1>Button labelling WIP</h1>
+Alternatives when the button text is not enough. What actually works and where?
+
+<form>
+	<fieldset>
+		<label>With title alone</label><br>
+		<button title="Button is as button does">Click here</button>
+		<table>
+			<tr>
+				<td class="kind-of">
+					Chrome + Voice Over on Mac OSX
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<label>With aria-label alone</label><br>
+		<button aria-label="Button is as button does">Click here</button>
+		<table>
+			<tr>
+				<td class="works">
+					Chrome + Voice Over on Mac OSX
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<label>With visually-hidden text</label><br>
+		<button>Click here<span class="visually-hidden"> Button is as button does</span></button>
+		<table>
+			<tr>
+				<td class="works">
+					Chrome + Voice Over on Mac OSX
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+
+</form>
+
+<a href="https://www.w3.org/WAI/ARIA/1.0/CR/implementation-report">Full Browser support</a>
+<br>
+<a href="https://msdn.microsoft.com/en-us/library/hh968243(v=vs.85).aspx">aria-label supported on IE10+</a>
+<br>
+<a href="https://msdn.microsoft.com/en-us/library/cc848875(v=vs.85).aspx">aria-labelledby supported on IE8+</a>
+<br>
+<a href="https://msdn.microsoft.com/en-us/library/cc848875(v=vs.85).aspx">aria-hidden supported on IE8+</a>
+</body>
+</html>
